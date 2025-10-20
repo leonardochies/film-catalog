@@ -2,6 +2,48 @@
 
 <%= render @movie %>
 
+<div class="comments-section">
+  <h2>Comentários</h2>
+  
+  <%= form_with(model: [@movie, @movie.comments.build]) do |f| %>
+    <div class="field">
+      <% unless user_signed_in? %>
+        <div>
+          <%= f.label :author_name, "Seu nome" %>
+          <%= f.text_field :author_name %>
+        </div>
+      <% end %>
+      
+      <div>
+        <%= f.label :content, "Comentário" %>
+        <%= f.text_area :content %>
+      </div>
+    </div>
+
+    <div class="actions">
+      <%= f.submit "Adicionar comentário" %>
+    </div>
+  <% end %>
+
+  <div class="comments-list">
+    <% @movie.comments.order(created_at: :desc).each do |comment| %>
+      <div class="comment">
+        <p class="comment-author">
+          <strong>
+            <% if comment.user %>
+              <%= comment.user.email %>
+            <% else %>
+              <%= comment.author_name %>
+            <% end %>
+          </strong>
+          <small>(<%= time_ago_in_words(comment.created_at) %> atrás)</small>
+        </p>
+        <p class="comment-content"><%= comment.content %></p>
+      </div>
+    <% end %>
+  </div>
+</div>
+
 <div>
   <%= link_to "Edit this movie", edit_movie_path(@movie) %> |
   <%= link_to "Back to movies", movies_path %>
