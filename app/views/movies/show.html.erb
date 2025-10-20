@@ -3,25 +3,25 @@
 <%= render @movie %>
 
 <div class="comments-section">
-  <h2>Comentários</h2>
+  <h2><%= t('.comments') %></h2>
   
   <%= form_with(model: [@movie, @movie.comments.build]) do |f| %>
     <div class="field">
       <% unless user_signed_in? %>
         <div>
-          <%= f.label :author_name, "Seu nome" %>
+          <%= f.label :author_name, t('comments.form.your_name') %>
           <%= f.text_field :author_name %>
         </div>
       <% end %>
       
       <div>
-        <%= f.label :content, "Comentário" %>
+        <%= f.label :content, t('comments.form.comment') %>
         <%= f.text_area :content %>
       </div>
     </div>
 
     <div class="actions">
-      <%= f.submit "Adicionar comentário" %>
+      <%= f.submit t('comments.form.submit') %>
     </div>
   <% end %>
 
@@ -33,7 +33,7 @@
             <% if comment.user %>
               <%= comment.user.email %>
             <% else %>
-              <%= comment.author_name %>
+              <%= image_tag "icons/anonymous.svg", class: "icon-small" %> <%= comment.author_name %>
             <% end %>
           </strong>
           <small>(<%= time_ago_in_words(comment.created_at) %> atrás)</small>
@@ -45,8 +45,9 @@
 </div>
 
 <div>
-  <%= link_to "Edit this movie", edit_movie_path(@movie) %> |
   <%= link_to "Back to movies", movies_path %>
-
-  <%= button_to "Destroy this movie", @movie, method: :delete %>
+  <% if user_signed_in? && current_user == @movie.user %>
+    <%= link_to "Edit this movie", edit_movie_path(@movie) %> |
+    <%= button_to "Destroy this movie", @movie, method: :delete %>
+  <% end %>
 </div>

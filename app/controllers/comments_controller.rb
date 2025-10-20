@@ -9,9 +9,10 @@ class CommentsController < ApplicationController
     end
 
     if @comment.save
-      redirect_to @movie, notice: "Comentário adicionado com sucesso."
+      redirect_to @movie, notice: t(".success")
     else
-      redirect_to @movie, alert: "Erro ao adicionar comentário."
+      flash.now[:alert] = @comment.errors.full_messages.join(", ")
+      render "movies/show", status: :unprocessable_entity
     end
   end
 

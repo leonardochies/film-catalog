@@ -29,3 +29,27 @@
 
 en:
   hello: "Hello world"
+  movies:
+    index:
+      title: "Movies"
+      new_movie: "New Movie"
+    show:
+      comments: "Comments"
+      add_comment: "Add Comment"
+      back: "Back to Movies"
+      edit: "Edit Movie"
+      destroy: "Delete Movie"
+    form:
+      name: "Name"
+      director: "Director"
+      year: "Year"
+      submit: "Save"
+  comments:
+    form:
+      your_name: "Your Name"
+      comment: "Comment"
+      submit: "Add Comment"
+    errors:
+      invalid_author_name: "Author name can only contain letters and spaces."
+  time:
+    ago: "%{time} ago"

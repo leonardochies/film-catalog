@@ -1,27 +1,22 @@
-<div id="<%= dom_id movie %>">
+<div id="<%= dom_id movie %>" class="card" style="width: 18rem;">
+    <div class="card-body">
+        <h5 class="card-title">
+            <%= movie.title %> 
+            <span class="badge bg-secondary">
+                <%= movie.release_year %>
+            </span>
+        </h5>
+        <p class="card-text">
+            <%= movie.synopsis %>
+        </p>
+
   <p>
-    <strong>Title:</strong>
-    <%= movie.title %>
+    <strong>Duração:</strong>
+    <%= movie.duration %> minutos
   </p>
 
   <p>
-    <strong>Synopsis:</strong>
-    <%= movie.synopsis %>
-  </p>
-
-  <p>
-    <strong>Release year:</strong>
-    <%= movie.release_year %>
-  </p>
-
-  <p>
-    <strong>Duration:</strong>
-    <%= movie.duration %>
-  </p>
-
-  <p>
-    <strong>Director:</strong>
+    <strong>Diretor:</strong>
     <%= movie.director %>
   </p>
-
 </div>
