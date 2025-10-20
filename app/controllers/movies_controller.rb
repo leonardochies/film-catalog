@@ -1,5 +1,7 @@
 class MoviesController < ApplicationController
+  before_action :authenticate_user!, except: %i[ index show ]
   before_action :set_movie, only: %i[ show edit update destroy ]
+  before_action :authorize_user!, only: %i[ edit update destroy ]
 
   # GET /movies or /movies.json
   def index
@@ -21,7 +23,7 @@ class MoviesController < ApplicationController
 
   # POST /movies or /movies.json
   def create
-    @movie = Movie.new(movie_params)
+    @movie = current_user.movies.build(movie_params)
 
     respond_to do |format|
       if @movie.save
@@ -65,6 +67,10 @@ class MoviesController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def movie_params
-      params.expect(movie: [ :title, :synopsis, :release_year, :duration, :director ])
+      params.require(:movie).permit(:title, :synopsis, :release_year, :duration, :director)
+    end
+
+    def authorize_user!
+      redirect_to root_path, alert: "Você não tem autorização para realizar esta ação." unless @movie.user == current_user
     end
 end
