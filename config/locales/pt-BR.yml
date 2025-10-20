@@ -1,6 +1,10 @@
 ---
 pt-BR:
   activerecord:
+    attributes:
+      comment:
+        author_name: "Nome do autor"
+        content: "Comentário"
     errors:
       messages:
         record_invalid: 'A validação falhou: %{errors}'
@@ -14,10 +18,6 @@ pt-BR:
     - ter
     - qua
     - qui
-    - sex
-    - sáb
-    abbr_month_names:
-    -
     - jan
     - fev
     - mar
@@ -223,16 +223,29 @@ pt-BR:
       long: "%d de %B de %Y, %H:%M"
       short: "%d de %B, %H:%M"
     pm: pm
+  layouts:
+    application:
+      title: "Catálogo de Filmes"
+      sign_in: "Entrar"
+      sign_out: "Sair"
+      sign_up: "Registrar-se"
+      logged_in_as: "Logado como"
   movies:
     index:
       title: "Filmes"
       new_movie: "Novo Filme"
+      show: "Mostrar este filme"
+      back: "Voltar para filmes"
+    new:
+      heading: "Adicionar novo filme"
     show:
       comments: "Comentários"
       add_comment: "Adicionar comentário"
       back: "Voltar para filmes"
       edit: "Editar filme"
       destroy: "Excluir filme"
+      duration: "Duração"
+      director: "Diretor"
     form:
       name: "Nome"
       director: "Diretor"
@@ -243,7 +256,13 @@ pt-BR:
       your_name: "Seu nome"
       comment: "Comentário"
       submit: "Adicionar comentário"
+    create:
+      success: "Comentário adicionado com sucesso."
     errors:
-      invalid_author_name: "O nome do autor só pode conter letras e espaços."
+      content_blank: "não pode ficar em branco"
+      content_too_long: "é muito longo (máximo: 400 caracteres)"
+      author_name_blank: "não pode ficar em branco"
+      author_name_too_long: "é muito longo (máximo: 16 caracteres)"
+      invalid_author_name: "deve conter apenas letras e espaços"
   time:
     ago: "há %{time}"

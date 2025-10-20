@@ -1,44 +1,28 @@
-# Files in the config/locales directory are used for internationalization and
-# are automatically loaded by Rails. If you want to use locales other than
-# English, add the necessary files in this directory.
-#
-# To use the locales, use `I18n.t`:
-#
-#     I18n.t "hello"
-#
-# In views, this is aliased to just `t`:
-#
-#     <%= t("hello") %>
-#
-# To use a different locale, set it with `I18n.locale`:
-#
-#     I18n.locale = :es
-#
-# This would use the information in config/locales/es.yml.
-#
-# To learn more about the API, please read the Rails Internationalization guide
-# at https://guides.rubyonrails.org/i18n.html.
-#
-# Be aware that YAML interprets the following case-insensitive strings as
-# booleans: `true`, `false`, `on`, `off`, `yes`, `no`. Therefore, these strings
-# must be quoted to be interpreted as strings. For example:
-#
-#     en:
-#       "yes": yup
-#       enabled: "ON"
-
 en:
   hello: "Hello world"
+  layouts:
+    application:
+      title: "Movie Catalog"
+      sign_in: "Sign In"
+      sign_out: "Sign Out"
+      sign_up: "Sign Up"
+      logged_in_as: "Logged in as"
   movies:
     index:
       title: "Movies"
-      new_movie: "New Movie"
+      new_movie: "New movie"
+      show: "Show this movie"
+      back: "Back to movies"
+    new:
+      heading: "Add new movie"
     show:
       comments: "Comments"
       add_comment: "Add Comment"
       back: "Back to Movies"
       edit: "Edit Movie"
       destroy: "Delete Movie"
+      duration: "Duration"
+      director: "Director"
     form:
       name: "Name"
       director: "Director"
@@ -49,7 +33,18 @@ en:
       your_name: "Your Name"
       comment: "Comment"
       submit: "Add Comment"
+    create:
+      success: "Comment added successfully."
     errors:
-      invalid_author_name: "Author name can only contain letters and spaces."
+      content_blank: "can't be blank"
+      content_too_long: "is too long (maximum: 400 characters)"
+      author_name_blank: "can't be blank"
+      author_name_too_long: "is too long (maximum: 16 characters)"
+      invalid_author_name: "must contain only letters and spaces"
   time:
     ago: "%{time} ago"
+  activerecord:
+    attributes:
+      comment:
+        author_name: "Author name"
+        content: "Content"
