@@ -49,3 +49,8 @@ en:
       comment:
         author_name: "Author name"
         content: "Content"
+  devise:
+    registrations:
+      new:
+        sign_up: "Sign Up"
+        minimum_password_length: "characters minimum"

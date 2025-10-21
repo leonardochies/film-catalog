@@ -269,3 +269,8 @@ pt-BR:
       invalid_author_name: "deve conter apenas letras e espaços"
   time:
     ago: "há %{time}"
+  devise:
+    registrations:
+      new:
+        sign_up: "Registrar-se"
+        minimum_password_length: "caracteres mínimo"

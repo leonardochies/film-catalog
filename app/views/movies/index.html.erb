@@ -2,7 +2,7 @@
 
 <% content_for :title, I18n.t("movies.index.title") %>
 
-<%= link_to I18n.t("movies.index.new_movie"), new_movie_path %>
+<%= link_to I18n.t("movies.index.new_movie"), new_movie_path, class: "btn btn-primary" %>
 
 <div id="movies" class="">
   <div class="d-flex justify-content-center gap-4 flex-wrap">
