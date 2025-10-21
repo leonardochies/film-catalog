@@ -23,6 +23,7 @@ en:
       destroy: "Delete Movie"
       duration: "Duration"
       director: "Director"
+      synopsis: "Synopsis"
     form:
       name: "Name"
       director: "Director"

@@ -246,11 +246,14 @@ pt-BR:
       destroy: "Excluir filme"
       duration: "Duração"
       director: "Diretor"
+      synopsis: "Sinopse"
     form:
       name: "Nome"
       director: "Diretor"
       year: "Ano"
       submit: "Salvar"
+    create:
+      success: "Filme criado com sucesso."
   comments:
     form:
       your_name: "Seu nome"

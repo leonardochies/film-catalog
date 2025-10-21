@@ -24,6 +24,7 @@ gem "devise-i18n"
 
 gem "dartsass-rails"
 gem "bootstrap", "~> 5.3.3"
+gem "kaminari", "~> 1.2"
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem "tzinfo-data", platforms: %i[ windows jruby ]

@@ -1,53 +1,65 @@
-<p style="color: green"><%= notice %></p>
+<div class="container my-4" style="max-width: 75rem;">
+  <%# Detalhes do filme %>
+  <div class="card shadow-sm mb-4">
+    <div class="card-body">
+      <%= render "movie_detail", movie: @movie %>
+    </div>
+  </div>
 
-<%= render @movie %>
-
-<div class="comments-section">
-  <h2><%= t('.comments') %></h2>
-  
-  <%= form_with(model: [@movie, @movie.comments.build]) do |f| %>
-    <div class="field">
-      <% unless user_signed_in? %>
-        <div>
-          <%= f.label :author_name, t('comments.form.your_name') %>
-          <%= f.text_field :author_name %>
+  <%# Seção de comentários %>
+  <div class="card shadow-sm mb-4">
+    <div class="card-header">
+      <h4 class="mb-0"><%= t('.comments') %></h4>
+    </div>
+    <div class="card-body">
+      <%# Formulário de novo comentário %>
+      <%= form_with(model: [@movie, @movie.comments.build], class: "mb-4") do |f| %>
+        <% unless user_signed_in? %>
+          <div class="mb-3">
+            <%= f.label :author_name, t('comments.form.your_name'), class: "form-label" %>
+            <%= f.text_field :author_name, class: "form-control" %>
+          </div>
+        <% end %>
+        
+        <div class="mb-3">
+          <%= f.label :content, t('comments.form.comment'), class: "form-label" %>
+          <%= f.text_area :content, rows: 3, class: "form-control" %>
         </div>
+
+        <%= f.submit t('comments.form.submit'), class: "btn btn-primary" %>
       <% end %>
-      
-      <div>
-        <%= f.label :content, t('comments.form.comment') %>
-        <%= f.text_area :content %>
+
+      <hr>
+
+      <%# Lista de comentários %>
+      <div class="comments-list">
+        <% @movie.comments.order(created_at: :desc).each do |comment| %>
+          <div class="border-bottom pb-3 mb-3">
+            <div class="d-flex align-items-center gap-2 mb-2">
+              <strong>
+                <% if comment.user %>
+                  <%= comment.user.email %>
+                <% else %>
+                  <%= image_tag "icons/anonymous.svg", class: "icon-small" %>
+                  <%= comment.author_name %>
+                <% end %>
+              </strong>
+              <small class="text-muted">(<%= time_ago_in_words(comment.created_at) %>)</small>
+            </div>
+            <p class="mb-0"><%= comment.content %></p>
+          </div>
+        <% end %>
       </div>
     </div>
+  </div>
 
-    <div class="actions">
-      <%= f.submit t('comments.form.submit') %>
-    </div>
-  <% end %>
-
-  <div class="comments-list">
-    <% @movie.comments.order(created_at: :desc).each do |comment| %>
-      <div class="comment">
-        <p class="comment-author">
-          <strong>
-            <% if comment.user %>
-              <%= comment.user.email %>
-            <% else %>
-              <%= image_tag "icons/anonymous.svg", class: "icon-small" %> <%= comment.author_name %>
-            <% end %>
-          </strong>
-          <small>(<%= time_ago_in_words(comment.created_at) %> atrás)</small>
-        </p>
-        <p class="comment-content"><%= comment.content %></p>
-      </div>
+  <%# Ações do filme %>
+  <div class="d-flex gap-2">
+    <%= link_to t('movies.show.back'), movies_path, class: "btn btn-secondary" %>
+    <% if user_signed_in? && current_user == @movie.user %>
+      <%= link_to t('movies.show.edit'), edit_movie_path(@movie), class: "btn btn-warning" %>
+      <%= button_to t('movies.show.destroy'), @movie, method: :delete, class: "btn btn-danger", 
+          data: { turbo_confirm: "Tem certeza?" } %>
     <% end %>
   </div>
-</div>
-
-<div>
-  <%= link_to "Back to movies", movies_path %>
-  <% if user_signed_in? && current_user == @movie.user %>
-    <%= link_to "Edit this movie", edit_movie_path(@movie) %> |
-    <%= button_to "Destroy this movie", @movie, method: :delete %>
-  <% end %>
 </div>

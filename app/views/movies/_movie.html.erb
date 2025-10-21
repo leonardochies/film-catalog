@@ -1,22 +1,25 @@
-<div id="<%= dom_id movie %>" class="card" style="width: 18rem;">
-    <div class="card-body">
-        <h5 class="card-title">
-            <%= movie.title %> 
-            <span class="badge bg-secondary">
-                <%= movie.release_year %>
-            </span>
-        </h5>
-        <p class="card-text">
-            <%= movie.synopsis %>
-        </p>
+<div id="<%= dom_id movie %>" class="card d-flex shadow-sm w-25 mb-4">
+  <div class="card-body d-flex flex-column">
+    <h5 class="card-title">
+        <%= movie.title %> 
+        <span class="badge bg-secondary">
+            <%= movie.release_year %>
+        </span>
+    </h5>
+    <p class="card-text">
+        <%= movie.synopsis %>
+    </p>
+    <p>
+        <strong><%= I18n.t("movies.show.duration") %>:</strong>
+        <%= movie.duration %> minutos
+    </p>
 
-  <p>
-    <strong><%= I18n.t("movies.show.duration") %>:</strong>
-    <%= movie.duration %> minutos
-  </p>
-
-  <p>
-    <strong><%= I18n.t("movies.show.director") %>:</strong>
-    <%= movie.director %>
-  </p>
+    <p>
+        <strong><%= I18n.t("movies.show.director") %>:</strong>
+        <%= movie.director %>
+    </p>
+    <div class="mt-auto pt-2">
+        <%= link_to I18n.t("movies.index.show"), movie, class: "btn btn-primary btn-sm" %>
+    </div>
+  </div>
 </div>
