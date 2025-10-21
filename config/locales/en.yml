@@ -49,6 +49,12 @@ en:
       comment:
         author_name: "Author name"
         content: "Content"
+    movie:
+      title: "Title"
+      synopsis: "Synopsis"
+      release_year: "Release Year"
+      duration: "Duration (minutes)"
+      director: "Director"
   devise:
     registrations:
       new:

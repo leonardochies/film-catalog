@@ -5,6 +5,12 @@ pt-BR:
       comment:
         author_name: "Nome do autor"
         content: "Comentário"
+      movie:
+        title: "Título"
+        synopsis: "Sinopse"
+        release_year: "Ano de lançamento"
+        duration: "Duração (minutos)"
+        director: "Diretor"
     errors:
       messages:
         record_invalid: 'A validação falhou: %{errors}'
@@ -238,6 +244,7 @@ pt-BR:
       back: "Voltar para filmes"
     new:
       heading: "Adicionar novo filme"
+      title: "Novo Filme"
     show:
       comments: "Comentários"
       add_comment: "Adicionar comentário"

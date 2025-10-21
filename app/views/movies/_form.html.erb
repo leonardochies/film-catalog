@@ -1,8 +1,6 @@
 <%= form_with(model: movie) do |form| %>
   <% if movie.errors.any? %>
     <div style="color: red">
-      <h2><%= pluralize(movie.errors.count, "error") %> prohibited this movie from being saved:</h2>
-
       <ul>
         <% movie.errors.each do |error| %>
           <li><%= error.full_message %></li>
@@ -12,31 +10,31 @@
   <% end %>
 
   <div>
-    <%= form.label :title, style: "display: block" %>
-    <%= form.text_field :title %>
+    <%= form.label :title, style: "display: block", class: "form-label" %>
+    <%= form.text_field :title, class: "form-control" %>
   </div>
 
   <div>
-    <%= form.label :synopsis, style: "display: block" %>
-    <%= form.textarea :synopsis %>
+    <%= form.label :synopsis, style: "display: block", class: "form-label" %>
+    <%= form.textarea :synopsis, class: "form-control" %>
   </div>
 
   <div>
-    <%= form.label :release_year, style: "display: block" %>
-    <%= form.number_field :release_year %>
+    <%= form.label :release_year, style: "display: block", class: "form-label" %>
+    <%= form.number_field :release_year, class: "form-control" %>
   </div>
 
   <div>
-    <%= form.label :duration, style: "display: block" %>
-    <%= form.number_field :duration %>
+    <%= form.label :duration, style: "display: block", class: "form-label" %>
+    <%= form.number_field :duration, class: "form-control" %>
   </div>
 
   <div>
-    <%= form.label :director, style: "display: block" %>
-    <%= form.text_field :director %>
+    <%= form.label :director, style: "display: block", class: "form-label" %>
+    <%= form.text_field :director, class: "form-control" %>
   </div>
 
   <div>
-    <%= form.submit %>
+    <%= form.submit class: "btn btn-primary mt-4" %>
   </div>
 <% end %>
