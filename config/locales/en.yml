@@ -25,6 +25,9 @@ en:
       new_movie: "New movie"
       show: "Show this movie"
       back: "Back to movies"
+      search_placeholder: "Search by title, director, or year..."
+      search_all: "Search all"
+      search: "Search"
     new:
       heading: "Add new movie"
     show:

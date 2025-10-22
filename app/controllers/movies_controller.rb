@@ -3,10 +3,18 @@ class MoviesController < ApplicationController
   before_action :set_movie, only: %i[ show edit update destroy ]
   before_action :authorize_user!, only: %i[ edit update destroy ]
 
-  # GET /movies or /movies.json
-  def index
-    @movies = Movie.order(created_at: :desc).page(params[:page]).per(6)
-  end
+# GET /movies or /movies.json
+def index
+  search_term = params.dig(:q, :search_term)
+
+  @movies = Movie.includes(:categories, :user)
+                 .smart_search(search_term)
+                 .order(created_at: :desc)
+                 .page(params[:page])
+                 .per(6)
+
+  @q = Movie.ransack(params[:q])
+end
 
   # GET /movies/1 or /movies/1.json
   def show

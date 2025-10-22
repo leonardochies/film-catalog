@@ -257,6 +257,9 @@ pt-BR:
       new_movie: "Novo Filme"
       show: "Mostrar este filme"
       back: "Voltar para filmes"
+      search_placeholder: "Pesquisar por título, diretor ou ano..."
+      search_all: "Pesquisar tudo"
+      search: "Pesquisar"
     new:
       heading: "Adicionar novo filme"
       title: "Novo Filme"

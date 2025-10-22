@@ -1,19 +1,35 @@
 <% content_for :title, t("movies.index.title") %>
-<div class="d-flex justify-content-end mb-4">
-  <button class="btn btn-primary d-flex align-items-center gap-2">
-    <%= image_tag "icons/plus.svg", style: "width: 24px; height: 24px;" %>
-    <%= link_to t("movies.index.new_movie"), new_movie_path, style: "color: white; text-decoration: none;" %>
-  </button>
-</div>
 
-<div id="movies">
-  <div class="d-flex justify-content-center gap-4 flex-wrap">
-    <% @movies.each do |movie| %>
-      <%= render movie %>
+<div class="container">
+  <div class="d-flex justify-content-between align-items-end mb-4 gap-3">
+    <%# Formulário de busca %>
+    <%= search_form_for @q, class: "flex-grow-1" do |f| %>
+      <div class="d-flex">
+        <%= f.search_field :search_term, 
+            class: "form-control", 
+            placeholder: t('.search_placeholder'),
+            value: params.dig(:q, :search_term) %>
+        <%= f.submit t('.search'), class: "btn btn-primary" %>
+      </div>
+    <% end %>
+
+    <%= link_to new_movie_path, class: "btn btn-primary d-flex align-items-center gap-2 flex-shrink-0" do %>
+      <%= image_tag "icons/plus.svg", style: "width: 24px; height: 24px;" %>
+      <span><%= t("movies.index.new_movie") %></span>
     <% end %>
   </div>
-</div>
 
-<div class="d-flex justify-content-center mt-4">
-  <%= paginate @movies %> 
+  <%# Lista de filmes %>
+  <div id="movies">
+    <div class="d-flex justify-content-center gap-4 flex-wrap">
+      <% @movies.each do |movie| %>
+        <%= render movie %>
+      <% end %>
+    </div>
+  </div>
+
+  <%# Paginação %>
+  <div class="d-flex justify-content-center mt-4">
+    <%= paginate @movies %>
+  </div>
 </div>
