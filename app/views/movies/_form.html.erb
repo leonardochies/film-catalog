@@ -9,27 +9,32 @@
     </div>
   <% end %>
 
-  <div>
+  <div class="mb-3">
     <%= form.label :title, style: "display: block", class: "form-label" %>
     <%= form.text_field :title, class: "form-control" %>
   </div>
 
-  <div>
+  <div class="mb-3">
+    <%= form.label :poster, style: "display: block", class: "form-label" %>
+    <%= form.file_field :poster, class: "form-control" %>
+  </div>
+
+  <div class="mb-3">
     <%= form.label :synopsis, style: "display: block", class: "form-label" %>
     <%= form.textarea :synopsis, class: "form-control" %>
   </div>
 
-  <div>
+  <div class="mb-3">
     <%= form.label :release_year, style: "display: block", class: "form-label" %>
     <%= form.number_field :release_year, class: "form-control" %>
   </div>
 
-  <div>
+  <div class="mb-3">
     <%= form.label :duration, style: "display: block", class: "form-label" %>
     <%= form.number_field :duration, class: "form-control" %>
   </div>
 
-  <div>
+  <div class="mb-3">
     <%= form.label :director, style: "display: block", class: "form-label" %>
     <%= form.text_field :director, class: "form-control" %>
   </div>

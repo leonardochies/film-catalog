@@ -1,16 +1,22 @@
 <div id="<%= dom_id movie %>">
-    <h2 class="mb-3 align-items-center d-flex gap-2">
-        <%= movie.title %> 
-        <span class="badge bg-secondary fs-6">
+    <div class="mb-3 d-flex align-items-center">
+        <h2>
+            <%= movie.title %>
+        </h2>
+        <span class="badge bg-secondary fs-6 ms-2">
             <%= movie.release_year %>
         </span>
-    </h2>
+    </div>
 
-  <div class="row mb-3">
-    <div class="col-md-6">
+    <% if @movie.poster.attached? %>
+        <%= image_tag @movie.poster, class: "img-fluid rounded", style: "width: 300px; height: auto;" %>
+    <% end %>
+
+  <div class="row mb-3 mt-3">
+    <div class="">
       <p><strong><%= I18n.t("movies.show.duration") %>:</strong> <%= movie.duration %> minutos</p>
     </div>
-    <div class="col-md-6">
+    <div class="">
       <p><strong><%= I18n.t("movies.show.director") %>:</strong> <%= movie.director %></p>
     </div>
   </div>
