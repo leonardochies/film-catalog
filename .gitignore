@@ -35,3 +35,7 @@
 
 /app/assets/builds/*
 !/app/assets/builds/.keep
+
+# Ignorar dotenv environment variable files
+.env
+.env.*.local
