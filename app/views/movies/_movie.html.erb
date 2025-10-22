@@ -26,6 +26,14 @@
         <%= movie.director %>
     </p>
 
+    <% if movie.categories.any? %>
+      <div class="mb-2">
+        <% movie.categories.each do |category| %>
+          <span class="badge bg-info text-dark me-1"><%= t("categories.#{category.name}") %></span>
+        <% end %>
+      </div>
+    <% end %>
+
     <div class="mt-auto pt-2">
         <%= link_to I18n.t("movies.index.show"), movie, class: "btn btn-primary btn-sm" %>
     </div>

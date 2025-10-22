@@ -11,6 +11,8 @@ pt-BR:
         release_year: "Ano de lançamento"
         duration: "Duração (minutos)"
         director: "Diretor"
+        poster: "Cartaz"
+        categories: "Categorias"
     errors:
       messages:
         record_invalid: 'A validação falhou: %{errors}'
@@ -254,6 +256,11 @@ pt-BR:
       duration: "Duração"
       director: "Diretor"
       synopsis: "Sinopse"
+      release_year: "Ano de lançamento"
+      categories: "Categorias"
+    edit:
+      heading: "Editar filme"
+      title: "Editar Filme"
     form:
       name: "Nome"
       director: "Diretor"

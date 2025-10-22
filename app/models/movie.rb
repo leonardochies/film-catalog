@@ -2,6 +2,7 @@ class Movie < ApplicationRecord
   belongs_to :user
   has_many :comments, dependent: :destroy
   has_one_attached :poster
+  has_and_belongs_to_many :categories
 
   validates :user, presence: true
   validates :title, presence: true

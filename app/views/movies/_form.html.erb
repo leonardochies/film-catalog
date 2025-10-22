@@ -39,6 +39,11 @@
     <%= form.text_field :director, class: "form-control" %>
   </div>
 
+  <div class="mb-3">
+      <%= form.label :categories, style: "display: block", class: "form-label" %>
+      <%= form.collection_select :category_ids, Category.all, :id, :name, {}, { multiple: true, class: "form-select" } %>
+  </div>
+
   <div>
     <%= form.submit class: "btn btn-primary mt-4" %>
   </div>

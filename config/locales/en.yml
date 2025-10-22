@@ -24,6 +24,11 @@ en:
       duration: "Duration"
       director: "Director"
       synopsis: "Synopsis"
+      release_year: "Release Year"
+      categories: "Categories"
+    edit:
+      heading: "Edit Movie"
+      title: "Edit Movie"
     form:
       name: "Name"
       director: "Director"
@@ -55,6 +60,8 @@ en:
       release_year: "Release Year"
       duration: "Duration (minutes)"
       director: "Director"
+      poster: "Poster"
+      categories: "Categories"
   devise:
     registrations:
       new:
