@@ -303,3 +303,8 @@ pt-BR:
         minimum_password_length: "caracteres mínimo"
     edit:
       edit_profile: "Editar Perfil"
+  pagination:
+    previous: "Anterior"
+    next: "Próxima"
+    last: "Última"
+    first: "Primeira"
