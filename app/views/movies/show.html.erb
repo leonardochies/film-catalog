@@ -2,7 +2,7 @@
   <%# Detalhes do filme %>
   <div class="card shadow-sm mb-4">
     <div class="card-body">
-      <%= render "movie_detail", movie: @movie %>
+      <%= render "movies/movie_detail", movie: @movie %>
     </div>
   </div>
 
@@ -40,7 +40,7 @@
                 <% if comment.user %>
                   <%= comment.user.email %>
                 <% else %>
-                  <%= image_tag "icons/anonymous.svg", class: "icon-small" %>
+                  <%= image_tag "icons/anonymous.svg", style: "width: 24px; height: 24px;" %>
                   <%= comment.author_name %>
                 <% end %>
               </strong>

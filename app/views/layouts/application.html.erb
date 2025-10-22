@@ -31,7 +31,7 @@
             <%= link_to t(".sign_out"), destroy_user_session_path, class: "nav-link", data: { turbo_method: :delete } %>
             <span class="navbar-text">
               <%= t('.logged_in_as') %> <strong><%= current_user.email %></strong>
-              <%= link_to t('.edit_profile'), edit_user_registration_path, class: "link-secondary" %>
+              <%= link_to t('devise.edit.edit_profile'), edit_user_registration_path, class: "link-secondary" %>
             </span>
           <% else %>
             <%= link_to t(".sign_in"), new_user_session_path, class: "nav-link" %>
@@ -52,7 +52,7 @@
 
 
     
-    <div class="container mt-4 display-flex">
+    <div class="container mt-4">
       <% if notice %>
         <div class="alert alert-success"><%= notice %></div>
       <% end %>

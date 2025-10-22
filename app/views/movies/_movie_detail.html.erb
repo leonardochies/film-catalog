@@ -26,12 +26,13 @@
     <p class="text-muted"><%= movie.synopsis %></p>
   </div>
 
-    <% if movie.categories.any? %>
-        <div class="mb-3">
-        <strong><%= I18n.t("movies.show.categories") %>:</strong>
-        <% movie.categories.each do |category| %>
-            <span class="badge bg-info text-dark me-1"><%= t("categories.#{category.name}") %></span>
-        <% end %>
-        </div>
-    <% end %>
+  <% if movie.categories.any? %>
+    <div class="mb-3">
+      <% movie.categories.each do |category| %>
+        <span class="badge bg-info text-dark me-1">
+          <%= t("movies.categories.#{category.name.parameterize.underscore}") %>
+        </span>
+      <% end %>
+    </div>
+  <% end %>
 </div>

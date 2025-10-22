@@ -8,6 +8,18 @@ en:
       sign_up: "Sign Up"
       logged_in_as: "Logged in as"
   movies:
+    categories:
+      action: "Action"
+      comedy: "Comedy"
+      drama: "Drama"
+      fantasy: "Fantasy"
+      horror: "Horror"
+      romance: "Romance"
+      sci_fi: "Sci-Fi"
+      thriller: "Thriller"
+      adventure: "Adventure"
+      mystery: "Mystery"
+      western: "Western"
     index:
       title: "Movies"
       new_movie: "New movie"

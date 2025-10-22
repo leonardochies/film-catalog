@@ -1,6 +1,6 @@
 <% content_for :title, I18n.t("movies.index.title") %>
 
-<%= link_to I18n.t("movies.index.new_movie"), new_movie_path, class: "btn btn-primary" %>
+<%= link_to I18n.t("movies.index.new_movie"), new_movie_path, class: "btn btn-primary mb-4" %>
 
 <div id="movies">
   <div class="d-flex justify-content-center gap-4 flex-wrap">
@@ -10,4 +10,8 @@
   </div>
 </div>
 
-<%= paginate @movies %>
+<nav aria-label="Page navigation">
+  <ul class="pagination">
+    <%= paginate @movies, theme: 'twitter-bootstrap-4' %>
+  </ul>
+</nav>

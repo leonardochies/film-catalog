@@ -239,6 +239,19 @@ pt-BR:
       sign_up: "Registrar-se"
       logged_in_as: "Logado como"
   movies:
+    categories:
+      action: "Ação"
+      adventure: "Aventura"
+      comedy: "Comédia"
+      drama: "Drama"
+      fantasy: "Fantasia"
+      horror: "Terror"
+      mystery: "Mistério"
+      romance: "Romance"
+      sci_fi: "Ficção Científica"
+      thriller: "Suspense"
+      western: "Faroeste"
+      biography: "Biografia"
     index:
       title: "Filmes"
       new_movie: "Novo Filme"
@@ -288,3 +301,5 @@ pt-BR:
       new:
         sign_up: "Registrar-se"
         minimum_password_length: "caracteres mínimo"
+    edit:
+      edit_profile: "Editar Perfil"

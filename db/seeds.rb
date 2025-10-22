@@ -9,21 +9,21 @@
 #   end
 
 categories = [
-  "Action",
-  "Comedy",
-  "Drama",
-  "Horror",
-  "Romance",
-  "Science Fiction",
-  "Adventure",
-  "Documentary",
-  "Thriller",
-  "Animation",
-  "Fantasy",
-  "Mystery",
-  "Musical",
-  "Western",
-  "Biography"
+  "action",
+  "comedy",
+  "drama",
+  "horror",
+  "romance",
+  "sci_fi",
+  "adventure",
+  "documentary",
+  "thriller",
+  "animation",
+  "fantasy",
+  "mystery",
+  "musical",
+  "western",
+  "biography"
 ]
 
 categories.each do |name|

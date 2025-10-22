@@ -11,7 +11,7 @@ class CommentsController < ApplicationController
     if @comment.save
       redirect_to @movie, notice: t(".success")
     else
-      flash.now[:alert] = @comment.errors.full_messages.join(".")
+      flash.now[:alert] = @comment.errors.full_messages.join("<br>").html_safe
       render "movies/show", status: :unprocessable_entity
     end
   end
