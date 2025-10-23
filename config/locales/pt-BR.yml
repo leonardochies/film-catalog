@@ -264,6 +264,8 @@ pt-BR:
     new:
       heading: "Adicionar novo filme"
       title: "Novo Filme"
+      categories: "+ categoria personalizada"
+      add_category: "Adicionar"
     show:
       comments: "Comentários"
       add_comment: "Adicionar comentário"

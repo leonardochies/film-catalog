@@ -11,7 +11,7 @@ class Movie < ApplicationRecord
   validates :duration, presence: true
   validates :director, presence: true
 
-  # Busca inteligente que funciona com texto E número
+  # Busca que funciona com texto e número (digitar diretor e ano de lançamento na mesma consulta)
   scope :smart_search, ->(term) {
     return all if term.blank?
 

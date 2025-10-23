@@ -30,6 +30,9 @@ en:
       search: "Search"
     new:
       heading: "Add new movie"
+      title: "New Movie"
+      categories: "+ custom category"
+      add_category: "Add"
     show:
       comments: "Comments"
       add_comment: "Add Comment"
