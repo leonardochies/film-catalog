@@ -1,5 +1,10 @@
 en:
   hello: "Hello world"
+  errors:
+    messages:
+      not_saved:
+        one: "Could not save %{resource}: %{count} error"
+        other: "Could not save %{resource}: %{count} errors"
   layouts:
     application:
       title: "Movie Catalog"
