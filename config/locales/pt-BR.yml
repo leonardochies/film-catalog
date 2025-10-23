@@ -238,6 +238,7 @@ pt-BR:
       sign_out: "Sair"
       sign_up: "Registrar-se"
       logged_in_as: "Logado como"
+      home: "Início"
   movies:
     categories:
       action: "Ação"
