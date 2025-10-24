@@ -62,7 +62,7 @@ end
     @movie.destroy!
 
     respond_to do |format|
-      format.html { redirect_to movies_path, notice: "Movie was successfully destroyed.", status: :see_other }
+      format.html { redirect_to movies_path, notice: t("movies.destroy.success"), status: :see_other }
       format.json { head :no_content }
     end
   end

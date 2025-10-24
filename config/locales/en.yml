@@ -57,6 +57,8 @@ en:
       director: "Director"
       year: "Year"
       submit: "Save"
+    delete:
+      success: "Movie deleted successfully."
   comments:
     form:
       your_name: "Your Name"

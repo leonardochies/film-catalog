@@ -6,7 +6,7 @@
     <%= search_form_for @q, class: "flex-grow-1" do |f| %>
       <div class="d-flex">
         <%= f.search_field :search_term, 
-            class: "form-control", 
+            class: "form-control",
             placeholder: t('.search_placeholder'),
             value: params.dig(:q, :search_term) %>
         <%= f.submit t('.search'), class: "btn btn-primary" %>

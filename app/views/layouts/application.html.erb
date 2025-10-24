@@ -25,28 +25,44 @@
   <body>
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
       <div class="container-fluid">
-        <div class="navbar-nav me-auto">
-            <%= link_to t(".home"), root_path, class: "nav-link" %>
-          <% if user_signed_in? %>
-            <%= link_to t(".sign_out"), destroy_user_session_path, class: "nav-link", data: { turbo_method: :delete } %>
-            <span class="navbar-text">
-              <%= t('.logged_in_as') %> <strong><%= current_user.email %></strong>
-              <%= link_to t('devise.edit.edit_profile'), edit_user_registration_path, class: "link-secondary" %>
-            </span>
-          <% else %>
-            <%= link_to t(".sign_in"), new_user_session_path, class: "nav-link" %>
-            <%= link_to t(".sign_up"), new_user_registration_path, class: "nav-link" %>
-          <% end %>
-        </div>
+        <%= link_to t("layouts.application.title"), root_path, class: "navbar-brand" %>
         
-        <ul class="navbar-nav ms-auto">
-          <li class="nav-item">
-            <%= link_to "EN", { locale: :en }, class: "nav-link" %>
-          </li>
-          <li class="nav-item">
-            <%= link_to "PT-BR", { locale: "pt-BR" }, class: "nav-link" %>
-          </li>
-        </ul>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <div class="navbar-nav me-auto">
+            <%= link_to t(".home"), root_path, class: "nav-link" %>
+            <% if user_signed_in? %>
+              <%= link_to t(".sign_out"), destroy_user_session_path, class: "nav-link", data: { turbo_method: :delete } %>
+            <% else %>
+              <%= link_to t(".sign_in"), new_user_session_path, class: "nav-link" %>
+              <%= link_to t(".sign_up"), new_user_registration_path, class: "nav-link" %>
+            <% end %>
+          </div>
+          
+          <ul class="navbar-nav ms-auto align-items-center gap-3">
+            <% if user_signed_in? %>
+              <li class="nav-item">
+                <span class="navbar-text">
+                  <%= t('.logged_in_as') %> <strong><%= current_user.email %></strong>
+                </span>
+              </li>
+              <li class="nav-item">
+                <%= link_to t('devise.edit.edit_profile'), edit_user_registration_path, class: "nav-link" %>
+              </li>
+            <% end %>
+            <li class="nav-item align-items-center d-flex gap-2 gap-lg-0">
+              <%= image_tag "icons/usa.svg", style: "width: 24px; height: 24px;" %>
+              <%= link_to "EN", { locale: :en }, class: "nav-link #{'active' if I18n.locale == :en}" %>
+            </li>
+            <li class="nav-item align-items-center d-flex gap-2 gap-lg-0">
+              <%= image_tag "icons/brazil.svg", style: "width: 24px; height: 24px;" %>
+              <%= link_to "PT-BR", { locale: "pt-BR" }, class: "nav-link #{'active' if I18n.locale.to_s == 'pt-BR'}" %>
+            </li>
+          </ul>
+        </div>
       </div>
     </nav>
 

@@ -290,6 +290,8 @@ pt-BR:
       submit: "Salvar"
     create:
       success: "Filme criado com sucesso."
+    destroy:
+      success: "Filme excluído com sucesso."
   comments:
     form:
       your_name: "Seu nome"
