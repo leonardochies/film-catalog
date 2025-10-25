@@ -33,6 +33,12 @@ gem "ransack"
 gem "rspec-rails"
 gem "factory_bot_rails"
 
+# Sidekiq para os CSV
+gem "sidekiq"
+
+# CSV para os CSV :)
+gem "csv"
+
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem "tzinfo-data", platforms: %i[ windows jruby ]
 
@@ -69,6 +75,8 @@ end
 group :development do
   # Use console on exceptions pages [https://github.com/rails/web-console]
   gem "web-console"
+  gem "letter_opener"
+  gem "letter_opener_web"
 end
 
 group :test do

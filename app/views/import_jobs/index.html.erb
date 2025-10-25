@@ -1,0 +1,22 @@
+<h1>Import Jobs</h1>
+<table class="table">
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>User</th>
+      <th>Status</th>
+      <th>Created At</th>
+      <th>Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @import_jobs.each do |import_job| %>
+      <tr>
+        <td><%= import_job.id %></td>
+        <td><%= import_job.user.email %></td>
+        <td><%= import_job.status %></td>
+        <td><%= l(import_job.created_at, format: :short) %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

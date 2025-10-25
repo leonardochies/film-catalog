@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+  </head>
+  <body>
+    <h1>Erro na importação</h1>
+    <p>Olá <%= @user.email %>,</p>
+    <p>Ocorreu um erro durante a importação dos seus filmes.</p>
+    <p><strong>Erro:</strong> <%= @error %></p>
+    <p>Por favor, verifique o arquivo CSV e tente novamente.</p>
+  </body>
+</html>

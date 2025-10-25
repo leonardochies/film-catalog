@@ -16,6 +16,9 @@
     <%= link_to new_movie_path, class: "btn btn-primary d-flex align-items-center gap-2 flex-shrink-0" do %>
       <%= image_tag "icons/plus.svg", style: "width: 24px; height: 24px;" %>
       <span><%= t("movies.index.new_movie") %></span>
+      <% if user_signed_in? %>
+        <%= link_to "Importar CSV", new_import_job_path, class: "btn btn-primary" %>
+      <% end %>
     <% end %>
   </div>
 
