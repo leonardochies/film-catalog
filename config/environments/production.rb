@@ -60,14 +60,10 @@ Rails.application.configure do
     }
   config.action_mailer.perform_deliveries = true
   config.action_mailer.raise_delivery_errors = true
-  config.action_mailer.delivery_method = :smtp
-  config.action_mailer.smtp_settings = {
-    domain:         "onrender.com",
-    address:        "smtp.sendgrid.net",
-    port:           587,
-    authentication: :plain,
-    user_name:      "apikey",
-    password:       ENV["SENDGRID_API_KEY"]
+  config.action_mailer.delivery_method = :sendgrid_actionmailer
+
+  config.action_mailer.sendgrid_actionmailer_settings = {
+    api_key: ENV["SENDGRID_API_KEY"]
   }
 
   # Enable locale fallbacks for I18n (makes lookups for any locale fall back to

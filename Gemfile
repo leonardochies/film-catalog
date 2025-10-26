@@ -29,6 +29,9 @@ gem "kaminari", "~> 1.2"
 # Buscas e filtros
 gem "ransack"
 
+# Sendgrid
+gem "sendgrid-actionmailer"
+
 # Testes
 gem "rspec-rails"
 gem "factory_bot_rails"
