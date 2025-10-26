@@ -33,6 +33,7 @@ en:
       search_placeholder: "Search by title, director, or year..."
       search_all: "Search all"
       search: "Search"
+      import_csv: "Import CSV"
     new:
       heading: "Add new movie"
       title: "New Movie"
@@ -92,3 +93,9 @@ en:
       new:
         sign_up: "Sign Up"
         minimum_password_length: "characters minimum"
+    passwords:
+      new:
+        forgot_your_password: "Forgot your password?"
+    sessions:
+      new:
+        log_in: "Log In"

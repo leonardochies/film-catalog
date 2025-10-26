@@ -264,6 +264,7 @@ pt-BR:
       search_placeholder: "Pesquisar por título, diretor ou ano..."
       search_all: "Pesquisar tudo"
       search: "Pesquisar"
+      import_csv: "Importar CSV"
     new:
       heading: "Adicionar novo filme"
       title: "Novo Filme"
@@ -314,6 +315,12 @@ pt-BR:
         minimum_password_length: "caracteres mínimo"
     edit:
       edit_profile: "Editar Perfil"
+    passwords:
+      new:
+        forgot_your_password: "Esqueceu sua senha?"
+    sessions:
+      new:
+        log_in: "Entrar"
   pagination:
     previous: "Anterior"
     next: "Próxima"
