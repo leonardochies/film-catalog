@@ -16,7 +16,6 @@
 
 - [Sobre o Projeto](#-sobre-o-projeto)
 - [Funcionalidades](#-funcionalidades)
-- [Tecnologias Utilizadas](#-tecnologias-utilizadas)
 - [Pré-requisitos](#-pré-requisitos)
 - [Instalação e Configuração](#-instalação-e-configuração)
 - [Como Rodar o Projeto](#-como-rodar-o-projeto)
@@ -34,7 +33,7 @@ Eu torço para que este projeto possa mostrar meu potencial e, pra isso, sintam-
 
 ---
 
-### Funcionalidades Principais
+### Funcionalidades
 
 - ✅ **Autenticação de Usuários** (usando a gem do Devise)
   - Registro e login
@@ -100,14 +99,17 @@ cd film-catalog
 bundle install
 ```
 
-### 3. Configure o banco de dados
+### 3. Instale o Redis
+```bash
+bundle install
+```
+
+### 4. Configure o banco de dados
 
 O PostgreSQL deve estar rodando:
 
 ```bash
-sudo service postgresql start  # Linux
-# ou
-brew services start postgresql  # macOS
+sudo service postgresql start  # Linux/WSL
 ```
 
 Crie e configure o banco de dados:
@@ -115,10 +117,10 @@ Crie e configure o banco de dados:
 ```bash
 rails db:create
 rails db:migrate
-rails db:seed  # Gera as categorias das seeds
+rails db:seed  # Gera as categorias através das seeds
 ```
 
-### 4. Configure o Active Storage
+### 5. Configure o Active Storage
 
 O Active Storage é necessário pro uso dos cartazes de filmes e para a importação CSV:
 
@@ -162,6 +164,11 @@ redis-server
 Abra seu navegador e acesse:
 ```
 http://localhost:3000
+```
+
+Ao rodar localmente optei por desabilitar o envio de emails por conta de estar usando uma conta free do Sidegrid, mas podem verificar os emails mesmo assim através do LetterOpener (em Prod/Deploy a funcionalidade de emails funciona normalmente):
+```
+http://localhost:3000/letter_opener
 ```
 
 ---
