@@ -1,5 +1,5 @@
 <div align="center">
-  <h1>Film Catalog</h1>
+  <h1>Catálogo de Filmes</h1>
   <p>
     <strong>Sistema completo de catálogo de filmes com CRUD completo de filmes e comentários, autenticação, e importação em massa via CSV<strong>
   </p>
@@ -9,6 +9,10 @@
   ![PostgreSQL](https://img.shields.io/badge/PostgreSQL-Database-blue?logo=postgresql)
   ![Sidekiq](https://img.shields.io/badge/Sidekiq-Background_Jobs-red?logo=ruby)
 </div>
+
+  <h3>
+    <a href="https://film-catalog-j1iz.onrender.com" target="_blank">🌐 Ver Demo Online</a>
+  </h3>
 
 ---
 
@@ -152,6 +156,8 @@ rails db:migrate
 ---
 
 ## Como Rodar o Projeto
+
+**🔗 Acesse o app em prod no Render:** [https://film-catalog-j1iz.onrender.com](https://film-catalog-j1iz.onrender.com)
 
 Incluí `Procfile.dev` que inicia todos os serviços necessários:
 
