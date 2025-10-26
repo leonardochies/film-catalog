@@ -210,10 +210,6 @@ category,title,synopsis,release_year,duration,director
 fantasy,"O Senhor dos Anéis: A Sociedade do Anel","Em uma terra fantástica e única, um hobbit recebe de presente de seu tio um anel mágico e maligno que precisa ser destruído antes que caia nas mãos do mal",2002,178,Peter Jackson
 ```
 
-### Exemplo de arquivo CSV completo
-
-Aqui tem um CSV que já importa alguns filmes, caso tenham interesse: [movies_example.csv](spec/fixtures/files/movies.csv)
-
 ### Acompanhando a importação
 
 - É possível acompanhar a importação pelo própria página de importações após inserir um arquivo e iniciar a importação, mas também pelo dashboard do Sidekiq:
