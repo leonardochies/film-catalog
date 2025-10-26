@@ -99,9 +99,10 @@ cd film-catalog
 bundle install
 ```
 
-### 3. Instale o Redis
+### 3. Instale o Redis (Para rodar os jobs do Sidekiq em background)
 ```bash
-bundle install
+sudo apt-get update
+sudo apt-get install redis-server
 ```
 
 ### 4. Configure o banco de dados
