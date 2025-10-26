@@ -201,6 +201,12 @@ http://localhost:3000/letter_opener
 
 ## Importação em Massa (CSV)
 
+**⚠️ Observação:** A importação em massa via CSV está **desabilitada em produção** no Render por causa das limitações do plano gratuito (ausência de Redis para o Sidekiq). Porém, deixei a funcionalidade totalmente em ambiente de desenvolvimento local.
+
+---
+
+### Como usar (ambiente local):
+
 1. Faça login
 2. Na página de filmes, clique no botão **"Importar CSV"**
 3. Faça upload do arquivo CSV
