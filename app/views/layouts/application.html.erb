@@ -19,17 +19,22 @@
   </head>
 
   <body>
+    <!-- Navbar principal com Bootstrap -->
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
       <div class="container-fluid">
         <%= link_to t("layouts.application.title"), root_path, class: "navbar-brand" %>
         
+        <!-- Botão 'hamburger' para mobile -->
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
         
         <div class="collapse navbar-collapse" id="navbarNav">
+          <!-- Links do lado esquerdo -->
           <div class="navbar-nav me-auto">
             <%= link_to t(".home"), root_path, class: "nav-link" %>
+            
+            <!-- Links de autenticação (Devise) -->
             <% if user_signed_in? %>
               <%= link_to t(".sign_out"), destroy_user_session_path, class: "nav-link", data: { turbo_method: :delete } %>
             <% else %>
@@ -38,7 +43,9 @@
             <% end %>
           </div>
           
+          <!-- Links do lado direito (perfil + idiomas) -->
           <ul class="navbar-nav ms-auto align-items-center gap-3">
+            <!-- Mostrar email do usuário logado -->
             <% if user_signed_in? %>
               <li class="nav-item">
                 <span class="navbar-text">
@@ -49,10 +56,14 @@
                 <%= link_to t('devise.edit.edit_profile'), edit_user_registration_path, class: "nav-link" %>
               </li>
             <% end %>
+            
+            <!-- Seletor de idioma: Inglês -->
             <li class="nav-item align-items-center d-flex gap-2 gap-lg-0">
               <%= image_tag "icons/usa.svg", style: "width: 24px; height: 24px;" %>
               <%= link_to "EN", { locale: :en }, class: "nav-link #{'active' if I18n.locale == :en}" %>
             </li>
+            
+            <!-- Seletor de idioma: Português -->
             <li class="nav-item align-items-center d-flex gap-2 gap-lg-0">
               <%= image_tag "icons/brazil.svg", style: "width: 24px; height: 24px;" %>
               <%= link_to "PT-BR", { locale: "pt-BR" }, class: "nav-link #{'active' if I18n.locale.to_s == 'pt-BR'}" %>
@@ -62,9 +73,9 @@
       </div>
     </nav>
 
-
-    
+    <!-- Container principal do conteúdo -->
     <div class="container mt-4">
+      <!-- Flash messages (notice = sucesso, alert = erro) -->
       <% if notice %>
         <div class="alert alert-success"><%= notice %></div>
       <% end %>
@@ -73,6 +84,7 @@
         <div class="alert alert-danger"><%= alert %></div>
       <% end %>
       
+      <!-- Conteúdo das views é renderizado aqui -->
       <%= yield %>
     </div>
   </body>
