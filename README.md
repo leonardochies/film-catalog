@@ -14,13 +14,13 @@
 
 ## Índice
 
-- [Sobre o Projeto](#-sobre-o-projeto)
-- [Funcionalidades](#-funcionalidades)
-- [Pré-requisitos](#-pré-requisitos)
-- [Instalação e Configuração](#-instalação-e-configuração)
-- [Como Rodar o Projeto](#-como-rodar-o-projeto)
-- [Importação em Massa (CSV)](#-importação-em-massa-csv)
-- [Executando os Testes](#-executando-os-testes)
+- [Sobre o Projeto](#sobre-o-projeto)
+- [Funcionalidades](#funcionalidades)
+- [Pré-requisitos](#pré-requisitos)
+- [Instalação e Configuração](#instalaçãoconfiguração)
+- [Como Rodar o Projeto](#como-rodar-o-projeto)
+- [Importação em Massa (CSV)](#importação-em-massa-csv)
+- [Executando os Testes](#testes)
 - [Estrutura do Projeto](#-estrutura-do-projeto)
 
 ---
@@ -193,7 +193,7 @@ http://localhost:3000/letter_opener
 
 ---
 
-## Para a Importação em Massa (CSV)
+## Importação em Massa (CSV)
 
 1. Faça login
 2. Na página de filmes, clique no botão **"Importar CSV"**
