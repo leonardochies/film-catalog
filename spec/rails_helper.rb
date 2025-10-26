@@ -70,6 +70,9 @@ RSpec.configure do |config|
   # arbitrary gems may also be filtered via:
   # config.filter_gems_from_backtrace("gem name")
 
+  # FactoryBot methods (create, build, etc.)
+  config.include FactoryBot::Syntax::Methods
+
   # Setar locale padrão pros testes conseguirem acessar o scope correto
   # config.before(:each) do
   #   I18n.locale = :'pt-BR'
