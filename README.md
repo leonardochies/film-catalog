@@ -100,17 +100,36 @@ bundle install
 ```
 
 ### 3. Instale o Redis (Para rodar os jobs do Sidekiq em background)
+
+**Linux (Ubuntu/Debian/WSL):**
 ```bash
 sudo apt-get update
 sudo apt-get install redis-server
 ```
 
+**macOS:**
+```bash
+brew install redis
+```
+
+Verifique se o Redis foi instalado corretamente:
+```bash
+redis-cli ping
+# Deve retornar 'PONG'
+```
+
+Se não estiver rodando, execute o Redis:
+```bash
+redis-server
+```
 ### 4. Configure o banco de dados
 
 O PostgreSQL deve estar rodando:
 
 ```bash
-sudo service postgresql start  # Linux/WSL
+sudo service postgresql start  # para Linux/WSL
+# ou
+brew services start postgresql  # para macOS
 ```
 
 Crie e configure o banco de dados:
