@@ -28,13 +28,11 @@
 
 ## Sobre o Projeto
 
-Primeiramente, obrigado ao pessoal da Mainô pela oportunidade! O projeto foi desenvolvido como parte do processo seletivo e aprendi bastante com ele, tentei demostrar o meu potencial ao máximo com o 'Rails Way', boas práticas de desenvolvimento, a arquitetura MVC, testes automatizados e o processamento assíncrono com Sidekiq e Redis pro super diferencial.
+Primeiramente, obrigado ao pessoal da Mainô pela oportunidade! O projeto foi desenvolvido como parte do processo seletivo e aprendi bastante com ele focando no Rails Way; boas práticas de desenvolvimento, a arquitetura MVC, testes automatizados e o processamento assíncrono com Sidekiq e Redis pro super diferencial.
 
-Torço para que este projeto possa mostrar meu potencial e, para isso, sintam-se a vontade para me contatar através do meu e-mail ou LinkedIn!
+Eu torço para que este projeto possa mostrar meu potencial e, pra isso, sintam-se a vontade para me contatar através do meu e-mail ou LinkedIn!
 
 ---
-
-## Funcionalidades
 
 ### Funcionalidades Principais
 
@@ -54,59 +52,24 @@ Torço para que este projeto possa mostrar meu potencial e, para isso, sintam-se
   - Apenas usuários autenticados podem comentar
 
 - ✅ **Busca e Filtros**
-  - Busca por título e diretor
+  - Busca por título, diretor e ano
   - Busca combinando texto e ano (ex: 'Martin Scorsese 1976' -> Taxi Driver)
-  - Implementado com Ransack
+  - Implementado com a gem 'Ransack'
 
 - ✅ **Paginação**
   - Lista de filmes paginada (usando a gem Kaminari)
-  - Interface limpa e responsiva
 
 ### Funcionalidades Opcionais Implementadas
 
 - ✅ **Importação em Massa via CSV**
-  - Upload de arquivo CSV
-  - Processamento assíncrono com Sidekiq
-  - Notificação por email ao concluir
 
 - ✅ **Categorização de Filmes**
-  - Múltiplas categorias por filme
 
 - ✅ **Interface Responsiva**
-  - Bootstrap 5
-  - Compatível e responsivo com mobile
 
 - ✅ **Internacionalização (i18n)**
-  - Suporte a Português (pt-BR, padrão) e Inglês (en)
 
 - ✅ **Testes Automatizados**
-  - RSpec
-  - Factory Bot
-  - Testes de models, controllers e requests
-
----
-
-## Tecnologias Utilizadas
-
-### Backend
-- **Ruby** 3.4.2
-- **Rails** 8.0.3
-- **PostgreSQL** - Banco de dados relacional
-- **Sidekiq** - Processamento assíncrono de jobs
-- **Redis** - Backend para Sidekiq
-
-### Frontend
-- **Bootstrap** 5.3.3 - Framework CSS
-- **Hotwire** (Turbo + Stimulus) - SPA-like experience
-- **Sass** - Pré-processador CSS
-
-### Gems Principais
-- **Devise** - Autenticação
-- **Ransack** - Busca e filtros
-- **Kaminari** - Paginação
-- **Active Storage** - Upload de arquivos
-- **RSpec** - Testes
-- **Factory Bot** - Fixtures para testes
 
 ---
 
@@ -122,7 +85,7 @@ Antes de começar, por favor verifiquem se estão instalados em sua máquina:
 
 ---
 
-## ⚙️ Instalação e Configuração
+## Instalação/Configuração
 
 ### 1. Clone o repositório
 
@@ -168,18 +131,14 @@ rails db:migrate
 
 ## Como Rodar o Projeto
 
-### Opção 1: Rodar todos os serviços de uma vez (Recomendado)
-
-O projeto inclui um `Procfile.dev` que inicia todos os serviços necessários:
+Incluí `Procfile.dev` que inicia todos os serviços necessários:
 
 ```bash
 bin/dev
 ```
 
-Isso iniciará:
-- **Rails server** (porta 3000)
-- **Sidekiq** (processamento de jobs)
-- **CSS build** (Sass watch mode)
+Isso iniciará o Rails Server na porta 3000, o Sidekiq e o Dartsass pra buildar o CSS.
+
 
 ### Opção 2: Rodar os serviços separadamente
 
@@ -193,7 +152,12 @@ bin/dev
 bundle exec sidekiq
 ```
 
-### Acessando a aplicação
+**Terminal 3 - Redis: (só é necessário se ele não estiver executando automaticamente)**
+```bash
+redis-server
+```
+
+### Acessando o app
 
 Abra seu navegador e acesse:
 ```
@@ -212,27 +176,24 @@ http://localhost:3000
 
 ### Formato esperado do CSV
 
-O arquivo CSV deve seguir este formato:
+A funcionalidade implementada do CSV só aceita uma categoria por filme atualmente e também recomendo envolver textos entre aspas para evitar que vírgulas quebrem o formato do CSV, que é assim:
 
 ```csv
-title,synopsis,release_year,duration,director,categories
-"The Matrix","A hacker discovers the truth about his reality and his role in the war against its controllers.",1999,136,"Wachowski Brothers","Action, Sci-Fi"
-"The Godfather","The aging patriarch of an organized crime dynasty transfers control to his reluctant son.",1972,175,"Francis Ford Coppola","Crime, Drama"
-"Inception","A thief who steals corporate secrets through dream-sharing technology.",2010,148,"Christopher Nolan","Action, Sci-Fi, Thriller"
+category,title,synopsis,release_year,duration,director
+fantasy,"O Senhor dos Anéis: A Sociedade do Anel","Em uma terra fantástica e única, um hobbit recebe de presente de seu tio um anel mágico e maligno que precisa ser destruído antes que caia nas mãos do mal",2002,178,Peter Jackson
 ```
+
 ### Exemplo de arquivo CSV completo
 
-Baixe um arquivo de exemplo aqui: [movies_example.csv](spec/fixtures/files/movies.csv)
+Aqui tem um CSV que já importa alguns filmes, caso tenham interesse: [movies_example.csv](spec/fixtures/files/movies.csv)
 
 ### Acompanhando a importação
 
-**Via Interface:**
-- Acompanhe o status na página de importações
-
-**Via Sidekiq Dashboard:**
+- É possível acompanhar a importação pelo própria página de importações após inserir um arquivo e iniciar a importação, mas também pelo dashboard do Sidekiq:
 ```
 http://localhost:3000/sidekiq
 ```
+
 ---
 
 ## Testes
