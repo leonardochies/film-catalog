@@ -53,9 +53,9 @@ Rails.application.configure do
   config.active_job.queue_adapter = :async
   # config.solid_queue.connects_to = { database: { writing: :queue } }
 
-  # Send emailçs.
+  # Send emails.
   config.action_mailer.default_url_options = {
-      host: ENV["HOST"],
+      host: ENV.fetch("HOST", "film-catalog-j1iz.onrender.com"),
       protocol: "https"
     }
   config.action_mailer.perform_deliveries = true
